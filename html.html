@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel4You</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<h1>Travel4You</h1>
+<h2>Traumziel entdeckt, Reise Perfekt!</h2>
+<p>Ob du von einem entspannten Strandurlaub träumst, kulturelle Highlights erleben möchtest, auf der Suche nach deinem nächsten Abenteuer bist oder einfach sicher und sorgenfrei reisen willst – bei uns findest du das ideale Reiseziel. Wir von Travel4You haben die Welt für dich durchkämmt und präsentieren dir die besten Orte, abgestimmt auf deine Wünsche und Bedürfnisse.
+    Ganz gleich, ob du nach einem günstigen Urlaub suchst, tief in fremde Kulturen eintauchen willst, den Nervenkitzel spüren oder einfach in Ruhe abschalten möchtest – wir bieten dir maßgeschneiderte Empfehlungen, die genau zu dir passen.
+    Lass uns gemeinsam deinen nächsten Traumurlaub finden. Travel4You – Traumziel entdeckt, Reise perfekt!</p>
+<h3>Unsere Empfehlungen:</h3>
+
+</head>
+<div class="container">
+    <div id="locationName" class="location-name">Barcelona</div>
+    <img id="image" src="https://www.powernewz.ch/wp-content/uploads/2020/04/powernewz_smart_city_barcelona_FB_1200x627.jpg" alt="Bild">
+    <div id="chartContainer">
+        <div class="chart" id="chart1">
+            <div class="bar">
+                <div class="bar-label">Preis</div>
+                <div class="bar-outer">
+                    <div class="bar-inner low" style="width: 10%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Kultur</div>
+                <div class="bar-outer">
+                    <div class="bar-inner high" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Sicherheit</div>
+                <div class="bar-outer">
+                    <div class="bar-inner low" style="width: 30%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Abenteuer</div>
+                <div class="bar-outer">
+                    <div class="bar-inner high" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart" id="chart2" style="display: none;">
+            <div class="bar">
+                <div class="bar-label">Preis</div>
+                <div class="bar-outer">
+                    <div class="bar-inner medium" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Kultur</div>
+                <div class="bar-outer">
+                    <div class="bar-inner medium-low" style="width: 40%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Sicherheit</div>
+                <div class="bar-outer">
+                    <div class="bar-inner very-high" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Abenteuer</div>
+                <div class="bar-outer">
+                    <div class="bar-inner very-high" style="width: 80%;"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="chart" id="chart3" style="display: none;">
+            <div class="bar">
+                <div class="bar-label">Preis</div>
+                <div class="bar-outer">
+                    <div class="bar-inner medium" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Kultur</div>
+                <div class="bar-outer">
+                    <div class="bar-inner medium-low" style="width: 40%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Sicherheit</div>
+                <div class="bar-outer">
+                    <div class="bar-inner medium" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Abenteuer</div>
+                <div class="bar-outer">
+                    <div class="bar-inner very-high" style="width: 80%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="prevImage()">Zurück</button>
+        <button onclick="nextImage()">Weiter</button>
+    </div>
+</div>
+
+<script>
+    const images = ["https://www.powernewz.ch/wp-content/uploads/2020/04/powernewz_smart_city_barcelona_FB_1200x627.jpg", "https://mypics.at/wp-content/uploads/2020/07/top10-ausflugsziele-kaernten-0837.jpg", "https://www.feinschmecker.de/uploads/media/jalag-fe-content-image/07/5097-palma-de-mallorca.jpg?v=1-0"]; // Liste der Bilder
+    const charts = ["chart1", "chart2", "chart3"];
+    const locations = ["Barcelona", "Kärnten", "Mallorca"];
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const imgElement = document.getElementById('image');
+        const locationElement = document.getElementById('locationName');
+
+        imgElement.src = images[index];
+        locationElement.textContent = locations[index];
+
+        charts.forEach((chart, i) => {
+            document.getElementById(chart).style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        showImage(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        showImage(currentIndex);
+    }
+</script>
+
+
+<h5>.   </h5>
+<h6>.   </h6>
+
+</body>
+</html>
